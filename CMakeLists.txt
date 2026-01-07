@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.28)
-project(CMakeSFMLProject LANGUAGES CXX)
+project(ShootEmUp LANGUAGES CXX)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
@@ -15,9 +15,15 @@ FetchContent_MakeAvailable(SFML)
 include_directories("include")
 
 add_executable(main
-    "src/main.cpp"
-    "include/Game.hpp"
+ "src/main.cpp"
+ "include/Game.hpp"
  "src/Game.cpp")
+
+add_custom_target(copy_media
+    COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_LIST_DIR}/copy_media.cmake
+)
+add_dependencies(main copy_media)
+
 target_compile_features(main PRIVATE cxx_std_17)
 target_link_libraries(main PRIVATE SFML::Graphics)
 
