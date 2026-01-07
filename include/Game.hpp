@@ -9,7 +9,7 @@ public:
 
 private:
 	void processEvents();
-	void update();
+	void update(sf::Time deltaTime);
 	void render();
 
 	void handlePlayerInput(sf::Keyboard::Scan scan, bool isPressed);
@@ -22,4 +22,6 @@ private:
 	bool m_isMovingDown = false;
 	bool m_isMovingRight = false;
 	bool m_isMovingLeft = false;
+
+	const sf::Time TimePerFrame = sf::seconds(1.f / 60.f);
 };
