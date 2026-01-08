@@ -17,7 +17,9 @@ include_directories("include")
 add_executable(main
  "src/main.cpp"
  "include/Game.hpp"
- "src/Game.cpp")
+ "src/Game.cpp"
+ "include/TextureHolder.hpp"
+ "src/TextureHolder.cpp")
 
 add_custom_target(copy_media
     COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_LIST_DIR}/copy_media.cmake
