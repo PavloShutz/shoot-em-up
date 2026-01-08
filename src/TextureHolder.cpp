@@ -7,3 +7,15 @@ void TextureHolder::load(Texture id, const std::string& filename)
 		;
 	m_textureMap.insert(std::make_pair(id, std::move(texture)));
 }
+
+sf::Texture& TextureHolder::get(Texture id)
+{
+	auto found = m_textureMap.find(id);
+	return *found->second;
+}
+
+const sf::Texture& TextureHolder::get(Texture id) const
+{
+	auto found = m_textureMap.find(id);
+	return *found->second;
+}

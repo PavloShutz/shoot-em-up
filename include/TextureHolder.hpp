@@ -14,6 +14,8 @@ class TextureHolder {
 private:
 	std::map <Texture, std::unique_ptr<sf::Texture>> m_textureMap;
 
-private:
+public:
 	void load(Texture id, const std::string& filename);
+	sf::Texture& get(Texture id);
+	const sf::Texture& get(Texture id) const;
 };
