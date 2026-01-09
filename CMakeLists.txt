@@ -20,6 +20,8 @@ add_executable(main
  "src/Game.cpp"
  "include/ResourceHolder.hpp"
  "include/ResourceHolder.inl"
+ "include/Entity.hpp"
+ "src/Entity.cpp"
 )
 
 add_custom_target(copy_media
