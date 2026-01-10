@@ -22,7 +22,8 @@ add_executable(main
  "include/ResourceHolder.inl"
  "include/Entity.hpp"
  "src/Entity.cpp"
-)
+ "include/Aircraft.hpp"
+ "src/Aircraft.cpp")
 
 add_custom_target(copy_media
     COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_LIST_DIR}/copy_media.cmake
