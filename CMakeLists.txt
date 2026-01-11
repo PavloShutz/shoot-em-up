@@ -23,7 +23,9 @@ add_executable(main
  "include/Entity.hpp"
  "src/Entity.cpp"
  "include/Aircraft.hpp"
- "src/Aircraft.cpp")
+ "src/Aircraft.cpp"
+ "include/SceneNode.hpp"
+ "src/SceneNode.cpp")
 
 add_custom_target(copy_media
     COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_LIST_DIR}/copy_media.cmake
