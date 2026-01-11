@@ -3,7 +3,7 @@
 #include <algorithm>
 #include <cassert>
 
-SceneNode::SceneNode() : m_parent(nullptr) {}
+SceneNode::SceneNode() : m_children(), m_parent(nullptr) {}
 
 void SceneNode::attachChild(Ptr child)
 {
@@ -22,4 +22,22 @@ SceneNode::Ptr SceneNode::detachChild(const SceneNode& node)
 	result->m_parent = nullptr;
 	m_children.erase(found);
 	return result;
+}
+
+void SceneNode::draw(sf::RenderTarget& target, sf::RenderStates states) const
+{
+	states.transform *= getTransform();  // place current node in the world
+	drawCurrent(target, states);
+
+	drawChildren(target, states);
+}
+
+void SceneNode::drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const
+{
+}
+
+void SceneNode::drawChildren(sf::RenderTarget& target, sf::RenderStates states) const
+{
+	for (const auto& child : m_children)
+		child->draw(target, states);
 }
