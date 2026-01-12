@@ -4,7 +4,6 @@
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Texture.hpp>
 #include <SFML/System/Time.hpp>
-#include <SFML/System/Time.inl>
 #include <SFML/Window/Keyboard.hpp>
 
 class Game {

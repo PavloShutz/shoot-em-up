@@ -7,5 +7,7 @@ Aircraft::Aircraft(Type type) : m_type(type) {
 
 void Aircraft::drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const
 {
-	target.draw(m_sprite, states);
+	if (m_sprite.has_value()) {
+		target.draw(m_sprite.value(), states);
+	}
 }
