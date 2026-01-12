@@ -5,6 +5,7 @@
 #include <SFML/Graphics/RenderStates.hpp>
 #include <SFML/Graphics/RenderTarget.hpp>
 #include <SFML/Graphics/Sprite.hpp>
+#include <optional>
 
 class Aircraft : public Entity {
 public:
@@ -19,5 +20,5 @@ public:
 
 private:
 	Type m_type;
-	sf::Sprite m_sprite;
+	std::optional<sf::Sprite> m_sprite;
 };
