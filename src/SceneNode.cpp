@@ -2,6 +2,7 @@
 
 #include <algorithm>
 #include <cassert>
+#include <utility>
 
 SceneNode::SceneNode() : m_children(), m_parent(nullptr) {}
 

@@ -3,7 +3,10 @@
 #include <memory>
 #include <vector>
 
-#include <SFML/Graphics.hpp>
+#include <SFML/Graphics/Drawable.hpp>
+#include <SFML/Graphics/RenderStates.hpp>
+#include <SFML/Graphics/RenderTarget.hpp>
+#include <SFML/Graphics/Transformable.hpp>
 
 class SceneNode : public sf::Transformable, public sf::Drawable {
 public:
