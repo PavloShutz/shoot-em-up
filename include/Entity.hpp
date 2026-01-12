@@ -1,8 +1,10 @@
 #pragma once
 
-#include <SFML/Graphics.hpp>
+#include <SFML/System/Vector2.hpp>
 
-class Entity {
+#include "SceneNode.hpp"
+
+class Entity : public SceneNode {
 public:
 	void setVelocity(sf::Vector2f velocity);
 	sf::Vector2f getVelocity() const;
