@@ -1,13 +1,21 @@
 #include "Aircraft.hpp"
+#include "ResourceHolder.hpp"
 
-// TODO: Initialize sprite object
-Aircraft::Aircraft(Type type) : m_type(type) {
+Textures::ID toTextureID(Aircraft::Type type) {
+	switch (type) {
+	case Aircraft::Eagle:
+		return Textures::Eagle;
+	case Aircraft::Raptor:
+		return Textures::Raptor;
+	}
+}
 
+Aircraft::Aircraft(Type type, const TextureHolder& textures)
+	: m_type(type), m_sprite(textures.get(toTextureID(type)))
+{
 }
 
 void Aircraft::drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const
 {
-	if (m_sprite.has_value()) {
-		target.draw(*m_sprite, states);
-	}
+	target.draw(m_sprite, states);
 }

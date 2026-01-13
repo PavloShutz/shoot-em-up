@@ -25,7 +25,9 @@ add_executable(main
  "include/Aircraft.hpp"
  "src/Aircraft.cpp"
  "include/SceneNode.hpp"
- "src/SceneNode.cpp")
+ "src/SceneNode.cpp"
+ "include/ResourceIdentifiers.hpp"
+)
 
 add_custom_target(copy_media
     COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_LIST_DIR}/copy_media.cmake
