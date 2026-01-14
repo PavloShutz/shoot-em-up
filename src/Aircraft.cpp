@@ -13,6 +13,8 @@ Textures::ID toTextureID(Aircraft::Type type) {
 Aircraft::Aircraft(Type type, const TextureHolder& textures)
 	: m_type(type), m_sprite(textures.get(toTextureID(type)))
 {
+	sf::FloatRect bounds = m_sprite.getLocalBounds();
+	m_sprite.setOrigin(bounds.size / 2.f);
 }
 
 void Aircraft::drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const
