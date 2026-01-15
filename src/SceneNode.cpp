@@ -31,6 +31,21 @@ void SceneNode::update(sf::Time dt)
 	updateChildren(dt);
 }
 
+sf::Transform SceneNode::getWorldTransform() const
+{
+	sf::Transform transform = sf::Transform::Identity;
+	
+	for (const SceneNode* node = this; node != nullptr; node = node->m_parent)
+		transform *= node->getTransform();
+	
+	return transform;
+}
+
+sf::Vector2f SceneNode::getWorldPosition() const
+{
+	return getWorldTransform() * sf::Vector2f();
+}
+
 void SceneNode::updateCurrent(sf::Time dt)
 {
 }

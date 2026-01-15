@@ -26,6 +26,9 @@ private:
 public:
 	void update(sf::Time dt);
 
+	sf::Transform getWorldTransform() const;
+	sf::Vector2f getWorldPosition() const;
+
 private:
 	virtual void updateCurrent(sf::Time dt);
 	void updateChildren(sf::Time dt);
