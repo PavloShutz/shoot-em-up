@@ -3,10 +3,7 @@
 #include <memory>
 #include <vector>
 
-#include <SFML/Graphics/Drawable.hpp>
-#include <SFML/Graphics/RenderStates.hpp>
-#include <SFML/Graphics/RenderTarget.hpp>
-#include <SFML/Graphics/Transformable.hpp>
+#include <SFML/Graphics.hpp>
 
 class SceneNode : public sf::Transformable, public sf::Drawable {
 public:
@@ -25,6 +22,13 @@ private:
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const final override;
 	virtual void drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const;
 	void drawChildren(sf::RenderTarget& target, sf::RenderStates states) const;
+
+public:
+	void update(sf::Time dt);
+
+private:
+	virtual void updateCurrent(sf::Time dt);
+	void updateChildren(sf::Time dt);
 
 private:
 	std::vector<Ptr> m_children;

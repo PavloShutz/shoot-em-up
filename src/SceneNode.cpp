@@ -25,6 +25,22 @@ SceneNode::Ptr SceneNode::detachChild(const SceneNode& node)
 	return result;
 }
 
+void SceneNode::update(sf::Time dt)
+{
+	updateCurrent(dt);
+	updateChildren(dt);
+}
+
+void SceneNode::updateCurrent(sf::Time dt)
+{
+}
+
+void SceneNode::updateChildren(sf::Time dt)
+{
+	for (auto& child : m_children)
+		child->update(dt);
+}
+
 void SceneNode::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
 	states.transform *= getTransform();  // place current node in the world
