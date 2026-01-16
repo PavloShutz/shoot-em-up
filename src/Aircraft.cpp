@@ -1,6 +1,12 @@
 #include "Aircraft.hpp"
 #include "ResourceHolder.hpp"
 
+/**
+ * @brief Convert aircraft type to texture identifier
+ * 
+ * @param type Aircraft type to convert
+ * @return Corresponding texture identifier
+ */
 Textures::ID toTextureID(Aircraft::Type type) {
 	switch (type) {
 	case Aircraft::Eagle:

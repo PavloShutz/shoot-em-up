@@ -6,28 +6,74 @@
 #include <SFML/System/Time.hpp>
 #include <SFML/Window/Keyboard.hpp>
 
+/**
+ * @brief Main game class managing the game loop and player
+ * 
+ * The Game class handles initialization, the main game loop including
+ * event processing, updates, and rendering. It manages the game window
+ * and player sprite.
+ */
 class Game {
 public:
+	/**
+	 * @brief Construct a new game instance
+	 * 
+	 * Initializes the game window, loads textures, and sets up the player sprite.
+	 */
 	Game();
+	
+	/**
+	 * @brief Run the main game loop
+	 * 
+	 * Runs the game loop with fixed time step updates, processing events,
+	 * updating game logic, and rendering frames until the window is closed.
+	 */
 	void run();
 
 private:
+	/**
+	 * @brief Process all pending window events
+	 * 
+	 * Handles window close events and keyboard input for player movement.
+	 */
 	void processEvents();
+	
+	/**
+	 * @brief Update game state
+	 * 
+	 * Updates player position based on current movement state.
+	 * 
+	 * @param deltaTime Time elapsed since the last update
+	 */
 	void update(sf::Time deltaTime);
+	
+	/**
+	 * @brief Render the current game state
+	 * 
+	 * Clears the window, draws the player sprite, and displays the frame.
+	 */
 	void render();
 
+	/**
+	 * @brief Handle keyboard input for player movement
+	 * 
+	 * Updates movement state flags based on WASD key presses/releases.
+	 * 
+	 * @param scan Scancode of the key that was pressed or released
+	 * @param isPressed True if the key was pressed, false if released
+	 */
 	void handlePlayerInput(sf::Keyboard::Scan scan, bool isPressed);
 
 private:
-	sf::RenderWindow m_window;
+	sf::RenderWindow m_window;  /**< Main game window */
 	//sf::CircleShape m_player;
-	sf::Texture m_texture;
-	sf::Sprite m_player;
+	sf::Texture m_texture;      /**< Player texture */
+	sf::Sprite m_player;        /**< Player sprite */
 
-	bool m_isMovingUp = false;
-	bool m_isMovingDown = false;
-	bool m_isMovingRight = false;
-	bool m_isMovingLeft = false;
+	bool m_isMovingUp = false;    /**< True if player is moving up */
+	bool m_isMovingDown = false;  /**< True if player is moving down */
+	bool m_isMovingRight = false; /**< True if player is moving right */
+	bool m_isMovingLeft = false;  /**< True if player is moving left */
 
-	const sf::Time TimePerFrame = sf::seconds(1.f / 60.f);
+	const sf::Time TimePerFrame = sf::seconds(1.f / 60.f); /**< Target frame time (60 FPS) */
 };
