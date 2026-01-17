@@ -65,10 +65,9 @@ private:
 	void handlePlayerInput(sf::Keyboard::Scan scan, bool isPressed);
 
 private:
-	sf::RenderWindow m_window;  /**< Main game window */
-	//sf::CircleShape m_player;
-	sf::Texture m_texture;      /**< Player texture */
-	sf::Sprite m_player;        /**< Player sprite */
+	sf::RenderWindow m_window;
+	sf::Texture m_texture;
+	sf::Sprite m_player;
 
 	bool m_isMovingUp = false;    /**< True if player is moving up */
 	bool m_isMovingDown = false;  /**< True if player is moving down */
