@@ -28,7 +28,7 @@ add_executable(main
  "src/SceneNode.cpp"
  "include/ResourceIdentifiers.hpp"
  "include/World.hpp"
-)
+ "src/World.cpp")
 
 add_custom_target(copy_media
     COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_LIST_DIR}/copy_media.cmake
