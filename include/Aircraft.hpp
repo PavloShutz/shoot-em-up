@@ -15,19 +15,16 @@
  */
 class Aircraft : public Entity {
 public:
-	/**
-	 * @brief Enumeration of available aircraft types
-	 */
 	enum Type {
-		Eagle,  /**< Eagle aircraft type */
-		Raptor  /**< Raptor aircraft type */
+		Eagle,
+		Raptor
 	};
 
 public:
 	/**
 	 * @brief Construct a new aircraft
 	 * 
-	 * @param type Type of aircraft (Eagle or Raptor)
+	 * @param type Type of aircraft
 	 * @param textures Reference to the texture holder containing aircraft textures
 	 */
 	explicit Aircraft(Type type, const TextureHolder& textures);
@@ -41,6 +38,6 @@ public:
 	virtual void drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const override;
 
 private:
-	Type m_type;        /**< Type of this aircraft */
-	sf::Sprite m_sprite; /**< Sprite used to render the aircraft */
+	Type m_type;
+	sf::Sprite m_sprite;
 };

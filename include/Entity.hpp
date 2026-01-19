@@ -36,5 +36,5 @@ private:
 	virtual void updateCurrent(sf::Time dt) override;
 
 private:
-	sf::Vector2f m_velocity; /**< Current velocity of the entity */
+	sf::Vector2f m_velocity;
 };

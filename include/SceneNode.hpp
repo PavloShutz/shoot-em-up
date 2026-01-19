@@ -112,6 +112,6 @@ private:
 	void updateChildren(sf::Time dt);
 
 private:
-	std::vector<Ptr> m_children; /**< List of child nodes */
-	SceneNode* m_parent;         /**< Pointer to parent node (nullptr for root) */
+	std::vector<Ptr> m_children;
+	SceneNode* m_parent;
 };
