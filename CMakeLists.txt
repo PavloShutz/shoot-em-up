@@ -27,6 +27,7 @@ add_executable(main
  "include/SceneNode.hpp"
  "src/SceneNode.cpp"
  "include/ResourceIdentifiers.hpp"
+ "include/World.hpp"
 )
 
 add_custom_target(copy_media
