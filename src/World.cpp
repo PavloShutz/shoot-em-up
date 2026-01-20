@@ -17,3 +17,9 @@ World::World(sf::RenderWindow& window)
 	// Prepare the view
 	m_worldView.setCenter(m_spawnPosition);
 }
+
+void World::loadTextures() {
+	m_textures.load(Textures::Eagle, "../media/textures/eagle.png");
+	m_textures.load(Textures::Raptor, "../media/textures/raptor.png");
+	m_textures.load(Textures::Desert, "../media/textures/dune_simple.png");
+}

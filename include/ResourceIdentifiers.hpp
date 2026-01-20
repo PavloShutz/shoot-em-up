@@ -9,12 +9,10 @@ namespace sf {
  * @brief Namespace containing texture identifiers for the game
  */
 namespace Textures {
-	/**
-	 * @brief Enumeration of all available texture types
-	 */
 	enum ID {
-		Eagle,  /**< Eagle aircraft texture */
-		Raptor  /**< Raptor aircraft texture */
+		Eagle,
+		Raptor,
+		Desert
 	};
 }
 
