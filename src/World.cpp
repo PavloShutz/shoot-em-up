@@ -19,6 +19,27 @@ World::World(sf::RenderWindow& window)
 	m_worldView.setCenter(m_spawnPosition);
 }
 
+void World::update(sf::Time dt) {
+	m_worldView.move({ 0.f, m_scrollSpeed * dt.asSeconds() });
+
+	sf::Vector2f position = m_playerAircraft->getPosition();
+	sf::Vector2f velocity = m_playerAircraft->getVelocity();
+
+	if (position.x <= m_worldBounds.position.x + 150
+		|| position.x >= m_worldBounds.position.x + m_worldBounds.size.x - 150) {
+		velocity.x *= -1;
+		m_playerAircraft->setVelocity(velocity);
+	}
+	
+	m_sceneGraph.update(dt);
+}
+
+void World::draw()
+{
+	m_window.setView(m_worldView);
+	m_window.draw(m_sceneGraph);
+}
+
 void World::loadTextures() {
 	m_textures.load(Textures::Eagle, "../media/textures/eagle.png");
 	m_textures.load(Textures::Raptor, "../media/textures/raptor.png");
