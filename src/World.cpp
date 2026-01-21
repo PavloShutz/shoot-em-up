@@ -43,7 +43,7 @@ void World::draw()
 void World::loadTextures() {
 	m_textures.load(Textures::Eagle, "../media/textures/eagle.png");
 	m_textures.load(Textures::Raptor, "../media/textures/raptor.png");
-	m_textures.load(Textures::Desert, "../media/textures/dune_simple.png");
+	m_textures.load(Textures::Desert, "../media/textures/dunes_simple.jpg");
 }
 
 void World::buildScene() {

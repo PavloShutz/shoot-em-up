@@ -1,11 +1,11 @@
 #include "Game.hpp"
 
+const sf::Time Game::TimePerFrame = sf::seconds(1.f / 60.f);
+
 Game::Game()
 	: m_window(sf::VideoMode({ 640, 480 }), "SFML Application")
-	, m_texture("../media/textures/eagle.png")
-	, m_player(m_texture)
+	, m_world(m_window)
 {
-	m_player.setPosition({ 100.f, 100.f });
 }
 
 void Game::run() {
@@ -38,34 +38,17 @@ void Game::processEvents() {
 }
 
 void Game::update(sf::Time deltaTime) {
-	sf::Vector2f movement({ 0.f, 0.f });
-	
-	if (m_isMovingUp)
-		movement.y -= 100.f;
-	if (m_isMovingDown)
-		movement.y += 100.f;
-	if (m_isMovingLeft)
-		movement.x -= 100.f;
-	if (m_isMovingRight)
-		movement.x += 100.f;
-
-	m_player.move(movement * deltaTime.asSeconds());
+	m_world.update(deltaTime);
 }
 
 void Game::render() {
 	m_window.clear();
-	m_window.draw(m_player);
+	m_world.draw();
+
+	m_window.setView(m_window.getDefaultView());
 	m_window.display();
 }
 
 void Game::handlePlayerInput(sf::Keyboard::Scan scan, bool isPressed)
 {
-	if (scan == sf::Keyboard::Scancode::W)
-		m_isMovingUp = isPressed;
-	else if (scan == sf::Keyboard::Scancode::S)
-		m_isMovingDown = isPressed;
-	else if (scan == sf::Keyboard::Scancode::D)
-		m_isMovingRight = isPressed;
-	else if (scan == sf::Keyboard::Scancode::A)
-		m_isMovingLeft = isPressed;
 }

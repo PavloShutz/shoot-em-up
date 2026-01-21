@@ -6,6 +6,8 @@
 #include <SFML/System/Time.hpp>
 #include <SFML/Window/Keyboard.hpp>
 
+#include "World.hpp"
+
 /**
  * @brief Main game class managing the game loop and player
  * 
@@ -66,13 +68,12 @@ private:
 
 private:
 	sf::RenderWindow m_window;
-	sf::Texture m_texture;
-	sf::Sprite m_player;
+	World m_world;
 
 	bool m_isMovingUp = false;
 	bool m_isMovingDown = false;
 	bool m_isMovingRight = false;
 	bool m_isMovingLeft = false;
 
-	const sf::Time TimePerFrame = sf::seconds(1.f / 60.f);
-};
+	static const sf::Time TimePerFrame;
+};	
