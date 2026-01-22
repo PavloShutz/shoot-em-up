@@ -31,6 +31,7 @@ add_executable(main
  "src/World.cpp"
  "include/SpriteNode.hpp"
  "src/SpriteNode.cpp"
+ "include/Command.hpp"
 )
 
 add_custom_target(copy_media
