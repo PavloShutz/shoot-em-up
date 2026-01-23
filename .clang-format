@@ -1,0 +1,7 @@
+Language: Cpp
+BasedOnStyle: Google
+AlignConsecutiveAssignments: Consecutive
+AlignConsecutiveShortCaseStatements:
+  Enabled: true
+  AlignCaseColons: true
+AllowShortCaseLabelsOnASingleLine: true

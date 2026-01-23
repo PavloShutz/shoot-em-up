@@ -1,13 +1,12 @@
 #pragma once
 
+#include <SFML/System.hpp>
 #include <cassert>
 #include <functional>
-
-#include <SFML/System.hpp>
 
 class SceneNode;
 
 struct Command {
-	Command();
-	std::function<void(SceneNode&, sf::Time)> action;
+  Command();
+  std::function<void(SceneNode&, sf::Time)> action;
 };

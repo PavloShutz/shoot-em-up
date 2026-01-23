@@ -2,18 +2,14 @@
 
 // forward declaration for SFML classes
 namespace sf {
-	class Texture;
+class Texture;
 }
 
 /**
  * @brief Namespace containing texture identifiers for the game
  */
 namespace Textures {
-	enum ID {
-		Eagle,
-		Raptor,
-		Desert
-	};
+enum ID { Eagle, Raptor, Desert };
 }
 
 // forward declaration and a few type definitions
