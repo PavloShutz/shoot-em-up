@@ -8,5 +8,6 @@
 class SceneNode;
 
 struct Command {
+	Command();
 	std::function<void(SceneNode&, sf::Time)> action;
 };
