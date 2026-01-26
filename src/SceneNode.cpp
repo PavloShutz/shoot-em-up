@@ -23,6 +23,10 @@ SceneNode::Ptr SceneNode::detachChild(const SceneNode& node) {
   return result;
 }
 
+unsigned int SceneNode::getCategory() const {
+  return static_cast<unsigned int>(Category::Scene);
+}
+
 void SceneNode::update(sf::Time dt) {
   updateCurrent(dt);
   updateChildren(dt);

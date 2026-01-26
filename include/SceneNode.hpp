@@ -4,6 +4,8 @@
 #include <memory>
 #include <vector>
 
+#include "Category.hpp"
+
 /**
  * @brief Base class for all scene graph nodes
  *
@@ -42,6 +44,8 @@ class SceneNode : public sf::Transformable, public sf::Drawable {
    * @return Unique pointer to the detached child node
    */
   Ptr detachChild(const SceneNode& node);
+
+  virtual unsigned int getCategory() const;
 
  private:
   /**
