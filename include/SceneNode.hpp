@@ -45,6 +45,16 @@ class SceneNode : public sf::Transformable, public sf::Drawable {
    */
   Ptr detachChild(const SceneNode& node);
 
+  /**
+   * @brief Get the category of this node
+   *
+   * Categories are used to identify and group different types of scene nodes
+   * (e.g., player entities, enemies, projectiles). This allows for efficient
+   * filtering and processing of specific node types in the scene graph.
+   *
+   * @return Bitmask representing the category/categories this node belongs to
+   * @see Category.hpp for available category flags
+   */
   virtual unsigned int getCategory() const;
 
  private:
