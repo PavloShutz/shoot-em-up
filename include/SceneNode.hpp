@@ -5,6 +5,7 @@
 #include <vector>
 
 #include "Category.hpp"
+#include "Command.hpp"
 
 /**
  * @brief Base class for all scene graph nodes
@@ -57,6 +58,8 @@ class SceneNode : public sf::Transformable, public sf::Drawable {
    */
   virtual unsigned int getCategory() const;
 
+  void onCommand(const Command& command, sf::Time dt);
+
  private:
   /**
    * @brief Draw this node and all its children
@@ -65,7 +68,7 @@ class SceneNode : public sf::Transformable, public sf::Drawable {
    * @param states Current render states including transformations
    */
   virtual void draw(sf::RenderTarget& target,
-                    sf::RenderStates states) const final override;
+                    sf::RenderStates  states) const final override;
 
   /**
    * @brief Draw only this node (without children)
@@ -76,7 +79,7 @@ class SceneNode : public sf::Transformable, public sf::Drawable {
    * @param states Current render states including transformations
    */
   virtual void drawCurrent(sf::RenderTarget& target,
-                           sf::RenderStates states) const;
+                           sf::RenderStates  states) const;
 
   /**
    * @brief Draw all children of this node
@@ -130,5 +133,5 @@ class SceneNode : public sf::Transformable, public sf::Drawable {
 
  private:
   std::vector<Ptr> m_children;
-  SceneNode* m_parent;
+  SceneNode*       m_parent;
 };

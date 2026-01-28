@@ -27,6 +27,14 @@ unsigned int SceneNode::getCategory() const {
   return static_cast<unsigned int>(Category::Scene);
 }
 
+void SceneNode::onCommand(const Command& command, sf::Time dt) {
+  if (command.category & getCategory())
+    command.action(*this, dt);
+
+  for (auto& child : m_children)
+    child->onCommand(command, dt);
+}
+
 void SceneNode::update(sf::Time dt) {
   updateCurrent(dt);
   updateChildren(dt);
@@ -48,7 +56,8 @@ sf::Vector2f SceneNode::getWorldPosition() const {
 void SceneNode::updateCurrent(sf::Time dt) {}
 
 void SceneNode::updateChildren(sf::Time dt) {
-  for (auto& child : m_children) child->update(dt);
+  for (auto& child : m_children)
+    child->update(dt);
 }
 
 void SceneNode::draw(sf::RenderTarget& target, sf::RenderStates states) const {
@@ -59,9 +68,10 @@ void SceneNode::draw(sf::RenderTarget& target, sf::RenderStates states) const {
 }
 
 void SceneNode::drawCurrent(sf::RenderTarget& target,
-                            sf::RenderStates states) const {}
+                            sf::RenderStates  states) const {}
 
 void SceneNode::drawChildren(sf::RenderTarget& target,
-                             sf::RenderStates states) const {
-  for (const auto& child : m_children) child->draw(target, states);
+                             sf::RenderStates  states) const {
+  for (const auto& child : m_children)
+    child->draw(target, states);
 }

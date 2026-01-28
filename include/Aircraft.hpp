@@ -34,11 +34,11 @@ class Aircraft : public Entity {
    * @param states Current render states including transformations
    */
   virtual void drawCurrent(sf::RenderTarget& target,
-                           sf::RenderStates states) const override;
+                           sf::RenderStates  states) const override;
 
   virtual unsigned int getCategory() const override;
 
  private:
-  Type m_type;
+  Type       m_type;
   sf::Sprite m_sprite;
 };

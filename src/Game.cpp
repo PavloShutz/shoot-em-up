@@ -8,7 +8,7 @@ Game::Game()
 
 void Game::run() {
   sf::Clock clock;
-  sf::Time timeSinceLastUpdate = sf::Time::Zero;
+  sf::Time  timeSinceLastUpdate = sf::Time::Zero;
   while (m_window.isOpen()) {  // main (game) loop
     processEvents();
     timeSinceLastUpdate += clock.restart();

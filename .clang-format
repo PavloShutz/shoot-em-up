@@ -5,3 +5,7 @@ AlignConsecutiveShortCaseStatements:
   Enabled: true
   AlignCaseColons: true
 AllowShortCaseLabelsOnASingleLine: true
+AlignConsecutiveDeclarations: true
+PointerAlignment: Right
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false

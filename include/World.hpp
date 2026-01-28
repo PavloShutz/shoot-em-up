@@ -27,14 +27,14 @@ class World {
   enum Layer { Background, Air, LayerCount };
 
  private:
-  sf::RenderWindow& m_window;
-  sf::View m_worldView;
-  TextureHolder m_textures;
-  SceneNode m_sceneGraph;
+  sf::RenderWindow&                  m_window;
+  sf::View                           m_worldView;
+  TextureHolder                      m_textures;
+  SceneNode                          m_sceneGraph;
   std::array<SceneNode*, LayerCount> m_sceneLayers;
 
   sf::FloatRect m_worldBounds;
-  sf::Vector2f m_spawnPosition;
-  float m_scrollSpeed;
-  Aircraft* m_playerAircraft;
+  sf::Vector2f  m_spawnPosition;
+  float         m_scrollSpeed;
+  Aircraft*     m_playerAircraft;
 };

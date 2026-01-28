@@ -1,5 +1,5 @@
 template <typename Resource, typename Identifier>
-void ResourceHolder<Resource, Identifier>::load(Identifier id,
+void ResourceHolder<Resource, Identifier>::load(Identifier         id,
                                                 const std::string& filename) {
   std::unique_ptr<Resource> resource(new Resource());
   if (!resource->loadFromFile(filename))
@@ -11,7 +11,7 @@ void ResourceHolder<Resource, Identifier>::load(Identifier id,
 
 template <typename Resource, typename Identifier>
 template <typename Parameter>
-void ResourceHolder<Resource, Identifier>::load(Identifier id,
+void ResourceHolder<Resource, Identifier>::load(Identifier         id,
                                                 const std::string& filename,
                                                 const Parameter& secondParam) {
   std::unique_ptr<Resource> resource(new Resource());

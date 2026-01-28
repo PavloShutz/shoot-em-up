@@ -22,7 +22,7 @@ Aircraft::Aircraft(Type type, const TextureHolder& textures)
 }
 
 void Aircraft::drawCurrent(sf::RenderTarget& target,
-                           sf::RenderStates states) const {
+                           sf::RenderStates  states) const {
   target.draw(m_sprite, states);
 }
 

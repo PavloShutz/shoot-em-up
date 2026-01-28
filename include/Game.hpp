@@ -68,7 +68,7 @@ class Game {
 
  private:
   sf::RenderWindow m_window;
-  World m_world;
+  World            m_world;
 
   bool m_isMovingUp    = false;
   bool m_isMovingDown  = false;
