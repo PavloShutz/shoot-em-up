@@ -7,5 +7,7 @@ AlignConsecutiveShortCaseStatements:
 AllowShortCaseLabelsOnASingleLine: true
 AlignConsecutiveDeclarations: true
 PointerAlignment: Right
+ReferenceAlignment: Right
 AllowShortIfStatementsOnASingleLine: false
 AllowShortLoopsOnASingleLine: false
+SpaceInEmptyBlock: true

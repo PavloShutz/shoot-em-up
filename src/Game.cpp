@@ -4,7 +4,7 @@ const sf::Time Game::TimePerFrame = sf::seconds(1.f / 60.f);
 
 Game::Game()
     : m_window(sf::VideoMode({640, 480}), "SFML Application"),
-      m_world(m_window) {}
+      m_world(m_window) { }
 
 void Game::run() {
   sf::Clock clock;
@@ -44,4 +44,4 @@ void Game::render() {
   m_window.display();
 }
 
-void Game::handlePlayerInput(sf::Keyboard::Scan scan, bool isPressed) {}
+void Game::handlePlayerInput(sf::Keyboard::Scan scan, bool isPressed) { }

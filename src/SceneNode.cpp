@@ -4,7 +4,7 @@
 #include <cassert>
 #include <utility>
 
-SceneNode::SceneNode() : m_children(), m_parent(nullptr) {}
+SceneNode::SceneNode() : m_children(), m_parent(nullptr) { }
 
 void SceneNode::attachChild(Ptr child) {
   child->m_parent = this;
@@ -53,7 +53,7 @@ sf::Vector2f SceneNode::getWorldPosition() const {
   return getWorldTransform() * sf::Vector2f();
 }
 
-void SceneNode::updateCurrent(sf::Time dt) {}
+void SceneNode::updateCurrent(sf::Time dt) { }
 
 void SceneNode::updateChildren(sf::Time dt) {
   for (auto& child : m_children)
@@ -68,7 +68,7 @@ void SceneNode::draw(sf::RenderTarget& target, sf::RenderStates states) const {
 }
 
 void SceneNode::drawCurrent(sf::RenderTarget& target,
-                            sf::RenderStates  states) const {}
+                            sf::RenderStates  states) const { }
 
 void SceneNode::drawChildren(sf::RenderTarget& target,
                              sf::RenderStates  states) const {
