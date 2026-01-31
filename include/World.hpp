@@ -4,6 +4,7 @@
 #include <array>
 
 #include "Aircraft.hpp"
+#include "CommandQueue.hpp"
 #include "ResourceHolder.hpp"
 #include "ResourceIdentifiers.hpp"
 #include "SceneNode.hpp"
@@ -18,6 +19,8 @@ class World {
 
   void update(sf::Time dt);
   void draw();
+
+  CommandQueue& getCommandQueue();
 
  private:
   void loadTextures();
@@ -37,4 +40,6 @@ class World {
   sf::Vector2f  m_spawnPosition;
   float         m_scrollSpeed;
   Aircraft*     m_playerAircraft;
+
+  CommandQueue m_commandQueue;
 };

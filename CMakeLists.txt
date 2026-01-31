@@ -32,7 +32,9 @@ add_executable(main
  "include/SpriteNode.hpp"
  "src/SpriteNode.cpp"
  "include/Command.hpp"
- "src/Command.cpp")
+ "src/Command.cpp"
+ "include/CommandQueue.hpp"
+ "src/CommandQueue.cpp")
 
 add_custom_target(copy_media
     COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_LIST_DIR}/copy_media.cmake

@@ -32,6 +32,10 @@ void World::update(sf::Time dt) {
     m_playerAircraft->setVelocity(velocity);
   }
 
+  // Forward commands to the scene graph
+  while (!m_commandQueue.isEmpty())
+    m_sceneGraph.onCommand(m_commandQueue.pop(), dt);
+
   m_sceneGraph.update(dt);
 }
 
@@ -39,6 +43,9 @@ void World::draw() {
   m_window.setView(m_worldView);
   m_window.draw(m_sceneGraph);
 }
+
+// Provide access to command queue from outside of the world
+CommandQueue& World::getCommandQueue() { return m_commandQueue; }
 
 void World::loadTextures() {
   m_textures.load(Textures::Eagle, "../media/textures/eagle.png");
