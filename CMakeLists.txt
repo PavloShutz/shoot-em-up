@@ -12,29 +12,22 @@ FetchContent_Declare(SFML
     SYSTEM)
 FetchContent_MakeAvailable(SFML)
 
-include_directories("include")
+set(SOURCES
+    src/main.cpp
+    src/Game.cpp
+    src/Entity.cpp
+    src/Aircraft.cpp
+    src/SceneNode.cpp
+    src/World.cpp
+    src/SpriteNode.cpp
+    src/Command.cpp
+)
 
-add_executable(main
- "src/main.cpp"
- "include/Game.hpp"
- "src/Game.cpp"
- "include/ResourceHolder.hpp"
- "include/ResourceHolder.inl"
- "include/Entity.hpp"
- "src/Entity.cpp"
- "include/Aircraft.hpp"
- "src/Aircraft.cpp"
- "include/SceneNode.hpp"
- "src/SceneNode.cpp"
- "include/ResourceIdentifiers.hpp"
- "include/World.hpp"
- "src/World.cpp"
- "include/SpriteNode.hpp"
- "src/SpriteNode.cpp"
- "include/Command.hpp"
- "src/Command.cpp"
- "include/CommandQueue.hpp"
- "src/CommandQueue.cpp")
+add_executable(main ${SOURCES})
+target_include_directories(main
+    PRIVATE
+        ${PROJECT_SOURCE_DIR}/include
+)
 
 add_custom_target(copy_media
     COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_LIST_DIR}/copy_media.cmake
